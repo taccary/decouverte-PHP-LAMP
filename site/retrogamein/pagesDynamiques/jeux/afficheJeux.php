@@ -12,8 +12,8 @@
 		
 
 		$SQL = "SELECT idConsole, nomConsole FROM console ORDER BY 2 ASC";
-		$stmt = $connexion->prepare($SQL);
-		$stmt->execute(array()); // on passe dans le tableaux les paramètres si il y en a à fournir (aucun ici)
+		$stmt = $connexion->prepare($SQL); // on prépare la requete
+		$stmt->execute(); // on execute la requete
 		$lesConsoles = $stmt->fetchAll(PDO::FETCH_ASSOC); // on met le resultat de la requete dans un tableau à 2 dimensions
 		//var_dump($lesConsoles); // on affiche le contenu de la variable $lesConsoles (ici un tableau php array())
 		$stmt->closeCursor(); // on ferme le curseur des résultats
@@ -51,7 +51,7 @@
 			$stmt = $connexion->prepare($SQL); // on prépare la requete
 			$stmt->bindValue(":id", $idConsole, PDO::PARAM_INT); // on transmet le numero de console à la requete
 			$stmt->execute(); // on execute la requete
-			$uneConsole = $stmt->fetch(); // on met le resultat de la requete dans un tableau
+			$uneConsole = $stmt->fetch(PDO::FETCH_ASSOC); // on met le resultat de la requete dans un tableau
 			$stmt->closeCursor(); // on ferme le curseur des résultats
 
 			/* deuxième requete pour récupérer la liste des jeux de la console */
