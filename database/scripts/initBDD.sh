@@ -28,7 +28,7 @@ fi
 
 # Créer un fichier temporaire avec les placeholders remplacés
 TEMP_SQL_FILE_ENV="/tmp/init-BDD-processed.sql"
-sed -e "s/__DATABASE_NAME__/$WEBAPP_DB_NAME/g" \
+sed -e "s/__WEBAPP_DB_NAME__/$WEBAPP_DB_NAME/g" \
     -e "s/__WEBAPP_USER__/$WEBAPP_USER/g" \
     -e "s/__WEBAPP_PASSWORD__/$WEBAPP_PASSWORD/g" \
     "$SQL_FILE_ENV" > "$TEMP_SQL_FILE_ENV"

@@ -16,23 +16,11 @@ Voici l'arborescence du dépôt et le rôle des différents composants :
 │   ├── devcontainer.json : Configuration du Dev Container pour VS Code
 │   ├── setup-lamp.sh : Script de configuration de l'environnement LAMP (MariaDB, PhpMyAdmin)
 │   └── Dockerfile : Dockerfile pour construire l'image du Dev Container serveur php avec mariadb
-├── .github/ : config pour les actions GitHub
-│   ├── dependabot.yml : Configuration pour Dependabot, qui gère les mises à jour des dépendances
-│   └── workflows/ : Workflows GitHub Actions pour CI/CD automatisés
-│       ├── documentation.yml : Génération automatique de documentation avec phpDocumentor
-│       ├── syntax.yml : Vérification de la qualité et syntaxe du code PHP
-│       └── tests.yml : Exécution des tests unitaires avec PHPUnit
 ├── .vscode/ : config pour XDebug et parametres de vscode
 ├── database/ : scripts pour la BDD ⭐
 │   ├── scripts/ : contient 3 scripts bash pour gérer la BDD métier
 │   └── sources-sql/ : fichiers SQL pour contruire la BDD métier ⭐
-├── documentation/ : Dossier pour la documentation du projet
-│   ├── generated/ : Documentation générée automatiquement par phpDocumentor
-│   └── tools/ : Outils de génération de documentation (phpDocumentor.phar, phpdoc.xml)
 ├── site/ : Dossier pour le code du site web (API, front-end, etc.) ⭐
-├── tests/ : Dossier pour les tests unitaires (PHPUnit) ⭐
-├── composer.json : Configuration des dépendances PHP et autoloader (utilisé pour PHPUnit)
-├── composer.lock : Fichier de verrouillage des versions exactes des dépendances (utilisé pour PHPUnit)
 ├── start.sh : Script de lancement pour démarrer les services
 └── stop.sh : Script pour arreter les services
 ```
@@ -40,15 +28,12 @@ Voici l'arborescence du dépôt et le rôle des différents composants :
 ### 📁 Dossiers principaux à modifier (⭐)
 
 - **`site/`** : Votre code PHP (classes, API, pages web)
-- **`tests/`** : Vos tests unitaires PHPUnit
 - **`database/sources-sql/`** : Vos fichiers SQL de base de données
 
 ### ⚙️ Fichiers de configuration (optionnels)
 
 - **`devcontainer.json`** : Variables d'environnement du codespace à adapter
-- **`workflows/`** : Actions GitHub pour CI/CD automatisés (tests, documentation, qualité)
-- **`documentation/tools/phpdoc.xml`** : Configuration de génération de documentation
-- **`composer.json`** : Gestion des dépendances PHP et autoloader
+
 
 ## Configuration du Codespace et lancement de l'application
 
@@ -73,7 +58,7 @@ Ce dépôt est configuré pour fonctionner avec les Codespaces de GitHub et les 
      Ce script démarre le serveur PHP intégré sur le port 8000, démarre mariadb et crée la base métier depuis le script renseigné (mettre à jour en fonction du projet).
 
 2. **Ouvrir le service php dans un navigateur** :
-   - Accédez à `http://localhost:8000` pour voir la page d'accueil de l'API.
+   - Accédez à `http://localhost:8000` pour voir la page d'accueil de l'API (ou depuis ports, ouvrir le service démarré sur le port 8000).
 
 3. **Accèder à la BDD** :
    - En mode commande depuis le client mysql en ligne de commande
@@ -83,7 +68,7 @@ Ce dépôt est configuré pour fonctionner avec les Codespaces de GitHub et les 
      ```
    - En client graphique avec l'extension Database dans le codespace (Host:127.0.0.1)
 
-   - avec phpMyAdmin sur le port 8080
+   - avec phpMyAdmin en ouvrant le serveur démarré sur le port 8080 (depuis ports, ouvrir le service démarré sur le port 8080).
 
 4. **initialiser la BDD** :
    - Au premier démarrage, créez la bdd métier avec le fichier sql
@@ -115,7 +100,7 @@ Ce Codespace contient XDebug pour le débogage PHP.
 
 [Tuto Grafikart : Xdebug, l'exécution pas à pas ](https://grafikart.fr/tutoriels/xdebug-breakpoint-834)
 
-## Extensions préinstallées dans le codespace pour ce dépôt
+## Liste des extensions préinstallées dans le codespace pour ce dépôt
 
 Pour faciliter le développement et la maintenance de ce projet, certaines extensions ont été automatiquement installées dans Visual Studio Code dans le codespace. Voici leur détail :
 
