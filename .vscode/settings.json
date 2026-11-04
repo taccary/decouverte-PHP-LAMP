@@ -18,7 +18,7 @@
     // CONFIGURATION SPÉCIFIQUE AU PHP
     // ========================================
     "[php]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode",  // Utilise Prettier pour formater automatiquement le code PHP
+        "editor.defaultFormatter": "bmewburn.vscode-intelephense-client",  // Utilise Intelephense pour formater automatiquement le code PHP
         "editor.tabSize": 4                // Indentation PHP de 4 espaces (norme PSR-12)
     },
 
