@@ -8,6 +8,8 @@ $_ENV["password"] = "P@ssw0rd!"; // mot de passe de l'utilisateur de la base de 
 $_ENV["host"] = "127.0.0.1"; // hôte de la base de données
 $_ENV["port"] = "3306"; // port de la base de données
 $_ENV["dbname"] = "retrogamein"; // nom de la base de données
-$_ENV["dsn"] = "mysql:host={$_ENV["host"]};dbname={$_ENV["dbname"]};port={$_ENV["port"]}"; // data source name (version utilisant les accolades d'interpolation pour inclure les variables)
-
-$_ENV["options"] = array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''); // option pour le driver PDO : UTF8 pour gérer les accents
+$_ENV["dsn"] = "mysql:host={$_ENV["host"]};dbname={$_ENV["dbname"]};port={$_ENV["port"]};charset=utf8mb4"; // data source name (version utilisant les accolades d'interpolation pour inclure les variables)
+$_ENV["options"] = array(
+    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+); // options de connexion à la base de données

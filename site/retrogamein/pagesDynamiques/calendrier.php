@@ -1,35 +1,7 @@
-<?php
-/* code préparé pour passer l'affichage des billets en dynamique */
-    // date de début et date de fin pour la requete SQL
-    $date_debut = '2021-01-01';
-    $date_fin = '2021-12-31';
-	// Créer des objets DateTime
-	$dateDebutObj = new DateTime($date_debut);
-	$dateFinObj = new DateTime($date_fin);
-	// Formater les dates selon le fuseau horaire du serveur
-	$formattedDateDebut = $dateDebutObj->format('Y-m-d H:i:s');
-	$formattedDateFin = $dateFinObj->format('Y-m-d H:i:s');
-
-    // En utilisant les éléments de code des requetes préparées de la page afficheUnJeu.php, écrire le code pour afficher les événements à venir entre le $formattedDateDebut et le $formattedDateFin
-
-	// requête à trouver pour afficher les événements entre les deux dates
-   
-    // Préparer la requête en utilisant la connexion à la base de données
-
-    // Définir les valeurs des paramètres en utilisant bindValue
-    
-    // Exécuter la requête
-    
-    // Récupérer tous les résultats de la requête dans un tableau associatif $lesEvenements
-    
-    // Fermer le curseur des résultats pour libérer les ressources
-
-?>
-
 <header>
-    <h1>Découvrez l'Excitation des Événements à Venir !</h1>
-    <h2>Bienvenue sur la page Agenda de RetroGame'In, votre source ultime pour rester informé des événements à venir dans le monde du retrogaming.</h2>
-    <p>Des conventions aux tournois, des expositions aux sorties de jeux rétro, notre agenda est le point de rendez-vous pour tous les passionnés du rétro. Ne manquez plus aucune occasion de célébrer la nostalgie du jeu vidéo. Explorez, planifiez, et plongez-vous dans l'univers passionnant des événements à venir.</p>
+	<h1>Découvrez l'Excitation des Événements à Venir !</h1>
+	<h2>Bienvenue sur la page Agenda de RetroGame'In, votre source ultime pour rester informé des événements à venir dans le monde du retrogaming.</h2>
+	<p>Des conventions aux tournois, des expositions aux sorties de jeux rétro, notre agenda est le point de rendez-vous pour tous les passionnés du rétro. Ne manquez plus aucune occasion de célébrer la nostalgie du jeu vidéo. Explorez, planifiez, et plongez-vous dans l'univers passionnant des événements à venir.</p>
 </header>
 
 <!-- Événement 1 : L&#039;étrange noël des sorciers - Yggdrasil 2026 -->
@@ -399,7 +371,7 @@
 			<div class="card-body">
 				<h5 class="card-title">Vide Grenier du Geek Clermont 2026</h5>
 				<p class="card-text"><small class="text-muted"><strong>Auvergne-Rhône-Alpes</strong> - 18 octobre 2026 - 18 octobre 2026</small></p>
-				<p class="card-text">Le Vide-Grenier du Geek de Clermont-Ferrand se déroulera  le dimanche 18 octobre 2026, place de la Victoire de 9h à 13h</p>
+				<p class="card-text">Le Vide-Grenier du Geek de Clermont-Ferrand se déroulera le dimanche 18 octobre 2026, place de la Victoire de 9h à 13h</p>
 				<a href="https://www.rom-game.fr/agenda/6577-vide+grenier+geek+clermont+ferrand.html" target="_blank" class="btn btn-primary">Lien de l'événement</a>
 			</div>
 		</div>
@@ -1051,5 +1023,3 @@
 		</div>
 	</div>
 </div>
-
-
