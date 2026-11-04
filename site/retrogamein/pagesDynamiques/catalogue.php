@@ -4,7 +4,7 @@
 			include 'jeux/afficheUnJeu.php'; // à commenter
 		}
 		else {
-			include 'jeux/afficheJeux.php'; // à commenter
+			include 'jeux/afficheLesJeux.php'; // à commenter
 		}
 	?>
 </div>

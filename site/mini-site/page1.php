@@ -1,4 +1,4 @@
-<?php include 'config.php'; // cette ligne permet d'inclure le fichier config.php dans cette page. Ce fichier contient la connexion à la base de données. ?>
+<?php include 'config.php'; ?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -6,9 +6,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Les jeux</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 </head>
 <body>
+<p></p>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="index.php">Mini-Site</a>
         <div id="navbarNav">

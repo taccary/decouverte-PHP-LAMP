@@ -1,5 +1,68 @@
 {
-    "workbench.startupEditor": "readme",
-    "editor.wordWrap": "on",
-    "editor.formatOnSave": false
+    // ========================================
+    // DÉMARRAGE ET INTERFACE GÉNÉRALE
+    // ========================================
+    "workbench.startupEditor": "readme",  // Ouvre automatiquement le fichier README au démarrage du codespace
+    "editor.wordWrap": "on",               // Active le retour à la ligne automatique pour ne pas avoir de scroll horizontal
+    "editor.formatOnSave": true,          // Formate automatiquement le code à chaque sauvegarde (pour tous les langages), on peut le désactiver pour certains langages spécifiques ci-dessous
+
+    // ========================================
+    // CONFIGURATION SPÉCIFIQUE AU HTML
+    // ========================================
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",  // Utilise Prettier pour formater automatiquement le code HTML
+        "editor.tabSize": 2                // Indentation HTML de 2 espaces (norme HTML)
+    },
+
+    // ========================================
+    // CONFIGURATION SPÉCIFIQUE AU PHP
+    // ========================================
+    "[php]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",  // Utilise Prettier pour formater automatiquement le code PHP
+        "editor.tabSize": 4                // Indentation PHP de 4 espaces (norme PSR-12)
+    },
+
+    // CONFIGURATION SPÉCIFIQUE AU SQL
+    "[sql]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",  // Utilise Prettier pour formater automatiquement le code SQL
+        "editor.formatOnSave": false,       // Formate le code SQL à chaque sauvegarde
+        "editor.tabSize": 2                // Indentation SQL de 2 espaces (norme SQL)
+    },
+
+    // ========================================
+    // INDENTATION ET STYLE DE CODE
+    // ========================================
+    "editor.tabSize": 4,                   // Définit la taille des tabulations à 4 espaces
+    "editor.insertSpaces": true,           // Utilise des espaces au lieu de vraies tabulations (meilleure compatibilité)
+    "editor.trimAutoWhitespace": true,     // Supprime les espaces inutiles à la fin des lignes
+
+    // ========================================
+    // LISIBILITÉ ET INTERFACE ÉDITEUR
+    // ========================================
+    "editor.fontSize": 14,                 // Augmente la taille de police pour une meilleure lisibilité
+    "editor.lineHeight": 1.6,              // Augmente l'espace entre les lignes pour faciliter la lecture
+    "editor.minimap.enabled": false,       // Désactive la minimap (bande de prévisualisation sur la droite)
+    "editor.renderWhitespace": "selection",// Affiche les espaces/tabulations uniquement quand du texte est sélectionné
+    "editor.bracketPairColorization.enabled": true,  // Colore les paires de parenthèses/crochets pour mieux les identifier
+    "editor.guides.bracketPairs": "active",// Affiche des lignes pour relier les paires de parenthèses ouvertes/fermées
+
+    // ========================================
+    // EXTENSIONS PHP INTELEPHENSE
+    // ========================================
+    "intelephense.files.maxSize": 1000000,  // Augmente la limite de taille des fichiers PHP analysés
+    "intelephense.diagnostics.enable": true,// Active les diagnostics PHP en temps réel (erreurs, avertissements)
+    "intelephense.format.enable": true,     // Active le formatage PHP via Intelephense
+
+    // ========================================
+    // EXTENSIONS SONARLINT (QUALITÉ DU CODE)
+    // ========================================
+    "sonarlint.showDescriptionInline": true,// Affiche les descriptions des problèmes directement dans le code
+    "sonarlint.highlightOnOpen": true,      // Surligne les problèmes détectés à l'ouverture d'un fichier
+
+    // ========================================
+    // TERMINAL INTÉGRÉ
+    // ========================================
+    "terminal.integrated.fontSize": 13,    // Taille de police du terminal intégré
+    "terminal.integrated.lineHeight": 1.4  // Hauteur des lignes du terminal
+
 }

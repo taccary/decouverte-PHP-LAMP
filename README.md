@@ -13,26 +13,32 @@ Voici l'arborescence du dépôt et le rôle des différents composants :
 ```
 .
 ├── .devcontainer/ : config du codespace
-│   ├── devcontainer.json : Configuration du Dev Container pour VS Code
-│   ├── setup-lamp.sh : Script de configuration de l'environnement LAMP (MariaDB, PhpMyAdmin)
-│   └── Dockerfile : Dockerfile pour construire l'image du Dev Container serveur php avec mariadb
-├── .vscode/ : config pour XDebug et parametres de vscode
-├── database/ : scripts pour la BDD ⭐
-│   ├── scripts/ : contient 3 scripts bash pour gérer la BDD métier
+│   ├── Dockerfile : Dockerfile pour construire l'image du Dev Container serveur php avec mariadb
+│   ├── devcontainer.json : Configuration du Dev Container pour VS Code ⚙️
+│   └── setup-lamp.sh : Script de configuration de l'environnement LAMP (MariaDB, PhpMyAdmin)
+├── .vscode/ : config pour XDebug et parametres de vscode 
+│   ├── launch.json : fichier de configuration de XDebug
+│   └── settings.json : Fichier de configuration de parametres de l'éditeur VSCode ⚙️
+├── database/ : scripts pour la BDD
+│   ├── scripts/ : contient 3 scripts bash pour gérer le déploiement et la sauvegarde des modifications effectuées sur la BDD métier
 │   └── sources-sql/ : fichiers SQL pour contruire la BDD métier ⭐
 ├── site/ : Dossier pour le code du site web (API, front-end, etc.) ⭐
-├── start.sh : Script de lancement pour démarrer les services
-└── stop.sh : Script pour arreter les services
+├── .gitignore : Spécifie les fichiers/dossiers à exclure du suivi Git (node_modules, vendor, configurations privées, etc.)
+├── LICENSE : Défini les termes légaux d'utilisation du code de ce dépot (type de licence du projet)
+├── README.md : Le fichier principal de documentation que vous êtes en train de lire au format markdown. Un README sert à : Présenter le projet, expliquer comment l'installer et l'utiliser, documenter les dépendances et faciliter l'onboarding des nouveaux développeurs
+├── start.sh : Script de lancement pour démarrer les services de la pile LAMP
+└── stop.sh : Script pour arreter les services de la pile LAMP
 ```
 
-### 📁 Dossiers principaux à modifier (⭐)
+### 📁 Dossiers dans lesquels vous aurez à intervenir (⭐)
 
-- **`site/`** : Votre code PHP (classes, API, pages web)
-- **`database/sources-sql/`** : Vos fichiers SQL de base de données
+- **`site/`** : C'est dans ce dossier qu'il y aura le code PHP de votre site (classes, API, pages web). 
+- **`database/sources-sql/`** : Ce dossier conteint les scripts SQL permettant de dépoyer la base de données. **Attention**, il ne s'agit pas directement de la BDD hebergée (ces fichiers à elle n'existent que dans le codespace), mais de fichiers qui permettront (à l'execution de scripts bash) de déployer et sauvegarder les modifications effectuées dans celle-ci sur le dépot. 
 
 ### ⚙️ Fichiers de configuration (optionnels)
 
-- **`devcontainer.json`** : Variables d'environnement du codespace à adapter
+- **`devcontainer.json`** : Configuration du Dev Container qui définit l'environnement du codespace (Dockerfile, extensions VS Code à installer, ports exposés, variables d'environnement MySQL, etc.)
+- **`.vscode/settings.json`** : Fichier de configuration des paramètres de VS Code pour le projet (affichage du readme au démarrage, retour à la ligne automatique, formatage du code à la sauvegarde, etc.)
 
 
 ## Configuration du Codespace et lancement de l'application

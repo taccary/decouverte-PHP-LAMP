@@ -62,9 +62,6 @@
 			$lesJeux = $stmt->fetchAll(PDO::FETCH_ASSOC); // on met le resultat de la requete dans un tableau à 2 dimensions
 			$stmt->closeCursor(); // on ferme le curseur des résultats
 
-			// var_dump($uneConsole); // on affiche le contenu de la variable $uneConsole (ici un tableau php array()
-			// var_dump($lesJeux); // on affiche le contenu de la variable $lesJeux (ici un tableau php array()
-
 			/* affichage du titre de la console et du nombre de jeux */
 
 			$nbJeux = "pas de jeux" ; // on initialise la variable $nbJeux
