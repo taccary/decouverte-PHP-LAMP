@@ -7,11 +7,11 @@ $fmt = new IntlDateFormatter(
 );
 $date_debut = '2026-11-01'; // date de début pour la requete SQL
 $date_fin = '2026-12-31'; // date de fin pour la requete SQL
-$lesEvenements = array(); // initialisation du tableau qui contiendra les événements récupérés depuis la base de données
+$lesEvenements = [['nom' => 'Événement 1', 'dateDebut' => '2026-11-01', 'dateFin' => '2026-11-01'], ['nom' => 'Événement 2', 'dateDebut' => '2026-12-01', 'dateFin' => '2026-12-31']]; // initialisation du tableau avec des données fictives. Ce tableau devra être écrasé par les données récupérées depuis la base de données
 
-/* code à ecrire PARTIE 1 :
- * ecriture et execution de la requete SQL préparée et parametrée pour récupérer toutes les données des enregistrements de la table calendrier ayant lieu entre les deux dates définies ci-dessus (incluses)., en s'inspirant des exemples de code des autres fichiers php.
- * Récupérez ensuite tous les résultats de la requête dans un tableau associatif $lesEvenements.
+/* Code à ecrire PARTIE 1 :
+ * Ecriture et execution d'une requête SQL préparée et parametrée pour récupérer toutes les données des enregistrements de la table calendrier ayant lieu entre les deux dates définies ci-dessus (incluses).
+ * Inspirez-vous des exemples de code des autres fichiers php pour exécuter la requête préparée et récupérer les résultats dans le tableau associatif $lesEvenements.
  */
 
 
@@ -26,23 +26,25 @@ $lesEvenements = array(); // initialisation du tableau qui contiendra les évén
 
 <?php
 /**
- * code à ecrire PARTIE 2 :
- * boucle de parcours des événements récupérés depuis la base de données et affichage de chaque événement dans une carte Bootstrap en reprenant le modèle d'une des cartes HTML statique fournie dans le fichier calendrier.php. 
- * Assurez-vous d'utiliser les données récupérées depuis la base de données pour remplir les informations de chaque événement, telles que le nom, la date, le lieu, la description et le lien vers l'événement.
- * Utilisez également le formatage des dates en français pour afficher les dates de début et de fin de chaque événement.
- * exemple de formatage d'une date : $date = new DateTime('2023-10-15');
- * Aide : Pour obtenir le même rendu que sur la page calendrier.php, copiez le code HTML d'une carte existante de la page calendrier.php et remplacez les valeurs statiques par des appels (echo) aux variables contenant les données de chaque événement.
+ * boucle de parcours du tableau lesEvenements
  */
-
 foreach ($lesEvenements as $evenement) {
+	// Création d'objets DateTime pour les dates de début et de fin de l'événement
 	$date_debut = new DateTime($evenement['dateDebut']);
 	$date_fin = new DateTime($evenement['dateFin']);
+	// Formatage des dates en français
 	$formatted_date_debut = $fmt->format($date_debut);
 	$formatted_date_fin = $fmt->format($date_fin);
 
-	// Affichage de la carte Bootstrap pour chaque événement
+	/**
+	 * code à ecrire PARTIE 2 :
+	 * Remplacer les valeurs statiques de l'exemple de carte Bootstrap ci-dessous par les valeurs dynamiques récupérées depuis le tableau $lesEvenements.
+	 * Vous pouvez utiliser les clés du tableau associatif $evenement pour accéder aux valeurs correspondantes.
+	 * Pour faire des insertions dynamiques dans le code HTML, vous pouvez utiliser la syntaxe <?= $variable ?> pour afficher la valeur d'une variable PHP dans le code HTML (voir l'exemple ligne 55 pour l'information du nom de l'événement).
+	 */
+	// 
 ?>
-	<!-- Exemple de carte Bootstrap pour un événement completement statique. Comme elle est dans la boucle, cette carte s'affichera autant de fois que d'événements dans le tableau $lesEvenements -->
+	<!-- Comme cette carte Bootstrap est dans la boucle, elle s'affichera autant de fois que d'événements dans le tableau $lesEvenements. A vous de la compéter pour afficher les informations de chaque événement. -->
 	<div class="card mb-3 article">
 		<div class="row no-gutters">
 			<div class="col-md-4">
@@ -50,7 +52,7 @@ foreach ($lesEvenements as $evenement) {
 			</div>
 			<div class="col-md-8">
 				<div class="card-body">
-					<h5 class="card-title">L&#039;étrange noël des sorciers - Yggdrasil 2026</h5>
+					<h5 class="card-title"><?= $evenement['nom'] ?></h5>
 					<p class="card-text"><small class="text-muted"><strong>Auvergne-Rhône-Alpes</strong> - 31 octobre - 15 novembre 2026</small></p>
 					<p class="card-text">L'Étrange Noël des Sorciers rouvre la Ruelle Enchantée au Fort de Bron les 31 octobre, 1er, 14 et 15 novembre 2026.</p>
 					<a href="https://www.rom-game.fr/agenda/7117-l+etrange+noel+des+sorciers.html" target="_blank" class="btn btn-primary">Lien de l'événement</a>
