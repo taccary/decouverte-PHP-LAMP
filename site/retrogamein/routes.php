@@ -31,7 +31,7 @@ switch ($pageDemandee) { /* on teste la valeur de $pageDemandee */
 	case "comments": /* commentez le code */
 		$affiche = "pagesDynamiques/commentaires.php";
 		break;
-	default: /* commentez le code */
+default: /* commentez le code */
 		$affiche = "pagesDynamiques/lostinspace.php";
 		$title = "Vous êtes perdus !!";
 		$keywords = "404";

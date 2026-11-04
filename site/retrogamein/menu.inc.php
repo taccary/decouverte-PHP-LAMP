@@ -1,4 +1,3 @@
-
 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 	<span class="navbar-toggler-icon"></span>
 </button>
@@ -7,13 +6,13 @@
 	<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 		<li class="nav-item">
 			<a class="btn btn-retro" href="index.php?page=home">
-			<span class="material-symbols-outlined">videogame_asset</span>
-			<span 	class="icon-text">RetroGame'In</span></a>
+				<span class="material-symbols-outlined">videogame_asset</span>
+				<span class="icon-text">RetroGame'In</span></a>
 		</li>
 		<li class="nav-item">
 			<a class="btn btn-retro" href="index.php?page=events">
-			<span class="material-symbols-outlined">calendar_month</span>
-			<span class="icon-text">Agenda</span></a>
+				<span class="material-symbols-outlined">calendar_month</span>
+				<span class="icon-text">Agenda</span></a>
 		</li>
 		<li class="nav-item">
 			<a class="btn btn-retro" href="index.php?page=games"><span class="material-symbols-outlined">view_list</span><span class="icon-text">Catalogue</span></a>
@@ -27,5 +26,3 @@
 		</li>
 	</ul>
 </div>
-
-
