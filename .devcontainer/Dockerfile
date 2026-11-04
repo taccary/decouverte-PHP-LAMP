@@ -9,6 +9,9 @@ RUN \
     && apt-get install -y mariadb-server wget curl gpg \
     # Installe les extensions PHP nécessaires pour MariaDB/MySQL
     && docker-php-ext-install mysqli pdo pdo_mysql \
+    # Installe l'extension PHP Intl pour le formatage des dates en français
+    && apt-get install -y libicu-dev \
+    && docker-php-ext-install intl \
     # Installe Node.js 20 (requis par SonarQube for VS Code)
     && curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
     && apt-get install -y nodejs \
